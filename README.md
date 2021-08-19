@@ -17,6 +17,11 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
+## Modifications of this fork
+This fork has a change from  
+<a href="https://github.com/capacitor-community/http/pull/160/commits/89c3c296d81d6f004c26a3cb04783e71496aba20">https://github.com/capacitor-community/http/pull/160/commits/89c3c296d81d6f004c26a3cb04783e71496aba20</a> 
+for android and a similar change on ios to support empty payloads in http responses.  
+
 ## Maintainers
 
 | Maintainer   | GitHub                                        | Social                                          |
