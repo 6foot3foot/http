@@ -109,6 +109,12 @@ class HttpRequestHandler {
             return output
         }
 
+        // FIX for 204 and similar returns that have no body, but still report application/json in the header
+        if (data.isEmpty)
+        {
+            return output
+        }
+
         let contentType = (response.allHeaderFields["Content-Type"] as? String ?? "application/default").lowercased();
 
         if (contentType.contains("application/json") || responseType == .json) {

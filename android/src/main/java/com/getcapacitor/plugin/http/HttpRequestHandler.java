@@ -290,7 +290,7 @@ public class HttpRequestHandler {
     private static Object parseJSON(String input) throws JSONException {
         JSONObject json = new JSONObject();
         try {
-            if ("null".equals(input.trim())) {
+            if (input.isEmpty() || "null".equals(input.trim())) {
                 return JSONObject.NULL;
             } else if ("true".equals(input.trim())) {
                 return new JSONObject().put("flag", "true");
