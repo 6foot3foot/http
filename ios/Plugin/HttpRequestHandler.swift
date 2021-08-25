@@ -166,7 +166,8 @@ class HttpRequestHandler {
         let connectTimeout = call.getDouble("connectTimeout");
         let readTimeout = call.getDouble("readTimeout");
 
-        let isHttpMutate = method == "DELETE" ||
+        // These require a body to be successful
+        let isHttpMutate =
             method == "PATCH" ||
             method == "POST" ||
             method == "PUT";
