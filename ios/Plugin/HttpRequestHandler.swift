@@ -313,7 +313,14 @@ class HttpRequestHandler {
 
                 try FilesystemUtils.createDirectoryForFile(dest, true)
 
+                // Allow overwriting of files
+                try? fileManager.removeItem(at: dest)
                 try fileManager.moveItem(at: location, to: dest)
+                
+                //only works if file doesn't exist
+                //try fileManager.moveItem(at: location, to: dest)
+
+
                 call.resolve(["path": dest.absoluteString])
             } catch let e {
                 call.reject("Unable to download file", "DOWNLOAD", e)
